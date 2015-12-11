@@ -1,0 +1,32 @@
+.sapSuiteGT {
+    display: inline-block;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 4px;
+    position: relative;
+    border: 0.0625rem transparent dotted;
+    outline: none;
+}
+
+ 
+        
+   .sapMPageBgStandard {  
+  background-image: url('http://weknowyourdreams.com/images/nature/nature-02.jpg');  
+ }        
+        
+ .sap-desktop .sapMIBar.sapMHeader-CTX{
+ 	
+ 	background-color : #800000;
+ }
+ 
+ .sapMIBar.sapMHeader-CTX {
+ 	
+ 	background-color : #800000;	
+ 	background: #800000;
+ }
+ 
+ .sapMIBar-CTX .sapMTitle {
+ 	color: #FFFFFF;
+ 	text-shadow: none;
+ 	font-weight: bold;
+ }

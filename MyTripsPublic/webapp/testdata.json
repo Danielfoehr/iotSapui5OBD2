@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "C_TDISTANCE": "7.50",
+      "C_TRIPID": "San Francisco",
+      "C_TRIPDAY": "11/16/2015"
+    },
+    {
+      "C_TDISTANCE": "3.45",
+      "C_TRIPID": "Hamburg",
+      "C_TRIPDAY": "11/17/2015"
+    }
+  ]
+}

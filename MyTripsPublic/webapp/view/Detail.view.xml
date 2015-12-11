@@ -1,0 +1,247 @@
+<mvc:View controllerName="Vorlage.controller.Detail" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic" 
+	xmlns="sap.suite.ui.commons" 
+	xmlns:geo="sap.ui.vbm"
+	xmlns:m="sap.m"
+	xmlns:c ="sap.ui.commons"
+	>
+	<semantic:DetailPage  id="page" navButtonPress="onNavBack" 
+		showNavButton="{device>/system/phone}" title="{i18n>detailTitle}"
+	>
+		<semantic:content 	class ="sapUiTinyMargin">
+	<DynamicContainer class="sapUiTinyMargin" >
+		<tiles>		
+			<GenericTile 
+				class="sapSuiteGT"
+				press="press"
+				header="Distance Travelled"
+				
+				frameType="TwoByOne"
+				size="Auto"
+				headerImage = "sap-icon://globe"
+				state="Loaded">
+				<tileContent>
+					<TileContent unit="miles" size="Auto"  frameType="TwoByOne" id="tileContentDistance">
+						<content>
+						
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>	
+		</tiles>
+	</DynamicContainer>
+		
+		<GenericTile 
+			press="press"
+			header="Duration"
+			class="sapUiTinyMargin"
+			frameType="TwoByOne"
+			size="Auto"
+			headerImage = "sap-icon://instance"
+			state="Loaded">
+			<tileContent>
+				<TileContent unit="houres:minutes" size="Auto"  frameType="TwoByOne" id="tileContentDuration">
+					<content>
+					
+					</content>
+				</TileContent>
+			</tileContent>
+		</GenericTile>	
+		
+		
+		
+		<DynamicContainer class="sapUiTinyMargin" >
+		<tiles>
+			<GenericTile 
+				press="press"
+				header="Start Time"
+				
+				frameType="TwoByOne"
+				size="Auto"
+				headerImage = "sap-icon://globe"
+				state="Loaded">
+				<tileContent>
+					<TileContent unit="miles" size="Auto"  frameType="TwoByOne" id="tileContentStartTime">
+						<content>
+						
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>	
+			
+			<GenericTile 
+				press="press"
+				header="End Time"
+			
+				frameType="TwoByOne"
+				size="Auto"
+				headerImage = "sap-icon://globe"
+				state="Loaded">
+				<tileContent>
+					<TileContent unit="miles" size="Auto"  frameType="TwoByOne" id="tileContentEndTime">
+						<content>
+						
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>	
+				</tiles>
+	</DynamicContainer>
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		<GenericTile 
+			press="press"
+			header="Fuel Consumed"
+			headerImage = "sap-icon://goal"
+			class="sapUiTinyMargin"
+			frameType="TwoByOne"
+			size="Auto"
+			state="Loaded">
+			<tileContent>
+				<TileContent id="tileContentFuelConsumed" unit="gallons" size="Auto"  frameType="TwoByOne" >
+					<content>
+						
+					</content>
+				</TileContent>
+			</tileContent>
+		</GenericTile>	
+		
+		
+		<GenericTile 
+			press="press"
+			header="Fuel cost"
+			class="sapUiTinyMargin"
+			headerImage = "sap-icon://monitor-payments"
+			frameType="TwoByOne"
+			size="Auto"
+			state="Loaded">
+			<tileContent>
+				<TileContent unit="dollars" size="Auto"  frameType="TwoByOne" id ="tileContentFuelCost" footer="Live data from www.gasbuddy.com">
+					<content>
+					
+					</content>
+				</TileContent>
+			</tileContent>
+		</GenericTile>	
+		
+		
+		
+		<!--  "Average Speed of Trip {C_TRIPID}" -->
+		<GenericTile 
+			press="press"
+
+			header="Average Speed of Trip {/TripID}"
+			headerImage = "sap-icon://physical-activity"
+			class="sapUiTinyMargin"
+			frameType="TwoByOne"
+			size="Auto"
+			state="Loaded">
+			<tileContent>
+				<TileContent unit="mpH" size="Auto"  frameType="TwoByOne" id="tileContentSpeed">
+					<content >
+					
+					
+					</content>
+				</TileContent>
+				
+			</tileContent>
+		</GenericTile>
+		
+		<!-- <ComparisonData	title="This Trip Average" value= "30" color="Critical"/>
+		<ComparisonData	title="Total Average" value="50" color="Good"/> -->
+		
+		
+		
+		<GenericTile 
+			press="press"
+			class="sapUiTinyMargin"
+			header="Average Acceleration of Trip {/TripID}"
+			headerImage = "sap-icon://arrow-top"
+			subheader= "{C_TIME}"
+			frameType="TwoByOne"
+			size="Auto"
+			state="Loaded">
+			<tileContent>
+				<TileContent unit="%" size="Auto"  frameType="TwoByOne" id = "tileContentAcc">
+					<content>
+						
+						
+					</content>
+				</TileContent>
+				
+			</tileContent>
+		</GenericTile>
+		
+		
+	
+	
+	
+
+		
+	
+			<GenericTile
+			press="press"
+			class="sapUiTinyMargin"
+			header="Average Gear of Trip {/TripID}"
+			headerImage = "sap-icon://drill-up"
+			frameType="TwoByOne"
+			size="Auto"
+			state="Loaded">
+				<tileContent>
+					<TileContent  id = "tileContentGear" size="Auto"  frameType="TwoByOne">
+						<content>
+								<!-- Dynamic content generated in controller -->					
+								</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+	
+
+						    
+						    
+		<c:HorizontalDivider></c:HorizontalDivider>
+		
+   
+		<geo:GeoMap 
+			class="sapUiTinyMarginBegin"
+		    id="map" 
+		    width="90%"
+		    height="100%"
+            openWindow= "onOpenDetail"
+            closeWindow= "onCloseDetail"
+        	contextMenu="onContextMenuGeo"
+            onAfterRendering ="OnAfterRendering"
+           
+           >		
+			<geo:Routes>
+				<geo:Route 
+		  
+				    end="0" 
+				    start="1"
+				    color="RGBA(255,0,0,255)"
+			    	hotDeltaColor="RHLSA(90;1.0;1.0;1.0)"
+				    click="onClickRoute" 
+				    contextMenu="onContextMenuRoute"
+				    id ="Route"/>
+			</geo:Routes>
+
+</geo:GeoMap>
+		
+		</semantic:content>
+		
+			
+	</semantic:DetailPage>
+	
+
+</mvc:View>
